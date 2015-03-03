@@ -3,6 +3,7 @@
 
   angular.module('treesApp', ['ui.tree'])
   .controller('treesCtrl', function($scope) {
+
     $scope.remove = function(scope) {
       scope.remove();
     };

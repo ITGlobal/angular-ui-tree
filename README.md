@@ -1,7 +1,7 @@
 Angular UI Tree
 ======================
 
-[![Build Status](https://travis-ci.org/angular-ui-tree/angular-ui-tree.svg)](https://travis-ci.org/angular-ui-tree/angular-ui-tree)
+[![Build Status](https://travis-ci.org/JimLiu/angular-ui-tree.svg?branch=master)](https://travis-ci.org/JimLiu/angular-ui-tree)
 
 Angular UI Tree is an AngularJS UI component that can sort nested lists, provides drag & drop support and doesn't depend on jQuery. If you are a user who uses `angular-nestedSortable`, this is [How to migrate From v1.x to v2.0](https://github.com/JimLiu/angular-ui-tree/wiki/Migrate-From-v1.x-to-v2.0).
 
@@ -98,7 +98,7 @@ Injecting `ui.tree`, `ui-tree-nodes`, `ui-tree-node`, `ui-tree-handle` to your h
     {{node.title}}
   </div>
   <ol ui-tree-nodes="" ng-model="node.nodes">
-    <li ng-repeat="node in node.nodes track by $index" ui-tree-node ng-include="'nodes_renderer.html'">
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
     </li>
   </ol>
 </script>
@@ -109,28 +109,6 @@ Injecting `ui.tree`, `ui-tree-nodes`, `ui-tree-node`, `ui-tree-handle` to your h
 </div>
 ```
 
-## Structure of json
-```json
-  data = [
-    {
-      "id": 1,
-      "title": "No childs, and I have an empty array in my items property so I'm nestable",
-      "items": []
-    },
-    {
-      "id": 2,
-      "title": "With childs",
-      "items": [
-        {
-          "id": 3,
-          "title": "No childs, and I have DON'T have an empty array in my items property so I'm NOT nestable"
-        }
-      ]
-    },
-    
-  ]
-```
-  
 ## Structure of angular-ui-tree
 
     ui-tree                             --> Root of tree
@@ -201,7 +179,7 @@ myAppModule.controller('MyController', function($scope) {
 });
 ```
 ```html
-<div ui-tree callbacks="treeOptions">
+<div ui-tree="treeOptions">
   <ol ui-tree-nodes ng-model="nodes">
     <li ng-repeat="node in nodes" ui-tree-node>{{node.title}}</li>
   </ol>

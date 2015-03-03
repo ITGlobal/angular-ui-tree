@@ -1,14 +1,21 @@
 {
   "name": "angular-ui-tree",
   "version": "2.1.5",
-  "homepage": "https://github.com/JimLiu/angular-ui-tree",
+  "homepage": "http://angular-ui-tree.github.io/website",
   "authors": [
     "Jim Liu <https://github.com/JimLiu>",
-    "Voles <https://github.com/Voles>"
+    "Voles <https://github.com/Voles>",
+    "Clément Prévot <https://github.com/clementprevot>",
+    "More: https://github.com/angular-ui-tree/angular-ui-tree/graphs/contributors"
   ],
-  "description": "Tree directive for AngularJS",
+  "description": "An AngularJS UI component that can sort nested lists, provides drag & drop support and doesn't depend on jQuery",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular-ui-tree/angular-ui-tree"
+  },
   "main": [
     "dist/angular-ui-tree.js",
+    "dist/angular-ui-tree.min.js",
     "dist/angular-ui-tree.min.css"
   ],
   "keywords": [
@@ -22,24 +29,22 @@
     "node"
   ],
   "dependencies": {
-    "angular": ">= 1.2.0"
+    "angular": ">= 1.2.0",
+    "es5-shim": "2.3.0"
   },
   "devDependencies": {
-    "angular-mocks": ">= 1.2.0",
-    "jasmine-jquery": "~2.0.5",
-    "jquery": "~2.1.1"
+    "angular": ">= 1.2.0",
+    "bootstrap": "~3.1.0",
+    "jquery": ">=1.10.x",
+    "jasmine-jquery": "~1.0.0",
+    "angular-mocks": "~1.2.11",
+    "firebase": "~1.0.11",
+    "angularfire": "~0.7.1"
   },
   "ignore": [
     "node_modules",
     "bower_components",
-    "tests",
-    "build",
-    "demo",
-    "guide",
-    "source",
-    "**/.*",
-    "Gruntfile.js",
-    "karma.conf.js",
-    "package.json"
+    "test",
+    "tests"
   ]
 }

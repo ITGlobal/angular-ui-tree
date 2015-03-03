@@ -2,7 +2,7 @@ module.exports = function(config) {
   'use strict';
 
   var cfg = {
-    bowerComponents: 'tests/bower_components'
+    bowerComponents: 'demo/bower_components'
   };
 
   config.set({

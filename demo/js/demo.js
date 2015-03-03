@@ -2,28 +2,7 @@
   'use strict';
 
   angular.module('demoApp', ['ui.tree'])
-  .controller('MainCtrl', function($scope, $timeout, keys) {
-    // Parameters
-    $scope.parameters = {
-      dragEnabled: true,
-      emptyPlaceholderEnabled: false,
-      maxDepth: 10,
-      dragDelay: 0,
-      dragDistance: 0,
-      lockX: false,
-      lockY: false,
-      boundTo: '',
-      spacing: 20,
-      coverage: 50,
-      cancelKey: 'esc',
-      copyKey: 'shift',
-      selectKey: 'ctrl',
-      enableExpandOnHover: true,
-      expandOnHover: 500,
-    };
-
-    $scope.keys = keys;
-
+  .controller('MainCtrl', function($scope) {
     $scope.list = [{
       "id": 1,
       "title": "1. dragon-breath",
@@ -58,7 +37,9 @@
       "items": []
     }];
 
-    $scope.callbacks = {
+    $scope.selectedItem = {};
+
+    $scope.options = {
     };
 
     $scope.remove = function(scope) {

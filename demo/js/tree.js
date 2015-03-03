@@ -3,6 +3,7 @@
 
   angular.module('treeApp', ['ui.tree'])
   .controller('treeCtrl', function($scope) {
+
     $scope.remove = function(scope) {
       scope.remove();
     };
@@ -11,7 +12,7 @@
       scope.toggle();
     };
 
-    $scope.moveLastToTheBeginning = function () {
+    $scope.moveLastToTheBegginig = function () {
       var a = $scope.data.pop();
       $scope.data.splice(0,0, a);
     };
@@ -25,12 +26,18 @@
       });
     };
 
+    var getRootNodesScope = function() {
+      return angular.element(document.getElementById("tree-root")).scope();
+    };
+
     $scope.collapseAll = function() {
-      $scope.$broadcast('collapseAll');
+      var scope = getRootNodesScope();
+      scope.collapseAll();
     };
 
     $scope.expandAll = function() {
-      $scope.$broadcast('expandAll');
+      var scope = getRootNodesScope();
+      scope.expandAll();
     };
 
     $scope.data = [{
@@ -76,6 +83,16 @@
         {
           "id": 31,
           "title": "node3.1",
+          "nodes": []
+        }
+      ],
+    }, {
+      "id": 4,
+      "title": "node4",
+      "nodes": [
+        {
+          "id": 41,
+          "title": "node4.1",
           "nodes": []
         }
       ],
